@@ -141,3 +141,56 @@
 * 가족 음주 여부에 따른 학생의 심리 상태
 * 가족 음주 여부에 따른 학생의 건강 상태
 * 가족 음주와 체벌 여부에 따른 학생의 무기력감 및 수업태도 교정 경험
+
+### 6. Github에 변경사항 올리기
+1. AIBP_Team_Project폴더 경로로 이동한다.
+    * /Users/choiwooyeon/Desktop/국민대강의자료/AI빅데이터프로그래밍/조별과제/work/AIBP_Team_Project 경록가 이와 같다면
+    * vscode 터미널에서 "cd 이동할경로" 명령어를 수행한다.
+    ```
+    (base) choiwooyeon@choeuyeons-MacBook-Pro ~ % cd /Users/choiwooyeon/Desktop/국민대강의자료/AI빅데이터프로그래밍/조별과제/work/AIBP_Team_Project
+    ```
+2. 이동한 경로에서 git add . 명령을 수행한다.
+    ```
+    (base) choiwooyeon@choeuyeons-MacBook-Pro AIBP_Team_Project % git add .
+    ```
+3. git commit 명령을 수행한다. 변경사항을 커밋한다.
+    ```
+    (base) choiwooyeon@choeuyeons-MacBook-Pro AIBP_Team_Project % git commit
+    ```
+4. 아래와 같은 내용이 나오는 편집기로 진입되는데, i키를 눌러 편집모드로 진입 후 변경한 이유를 작성한 후 저장을 위해 esc를 누르고 :wq! 를 입력하여 저장 후 해당 편집기를 닫는다.
+    ```
+    * change
+    # Please enter the commit message for your changes. Lines starting
+    # with '#' will be ignored, and an empty message aborts the commit.
+    #
+    # On branch main
+    # Your branch is up to date with 'origin/main'.
+    #
+    # Changes to be committed:
+    #       modified:   src/PRJ_02_Data_Analyze_Visualization_cwy.ipynb
+    ```
+5. git push 명령을 수행한다. 
+    ```
+    (base) choiwooyeon@choeuyeons-MacBook-Pro AIBP_Team_Project % git push
+    Enumerating objects: 7, done.
+    Counting objects: 100% (7/7), done.
+    Delta compression using up to 12 threads
+    Compressing objects: 100% (4/4), done.
+    Writing objects: 100% (4/4), 406 bytes | 406.00 KiB/s, done.
+    Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
+    remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+    To https://github.com/wooyeon83/AIBP_Team_Project.git
+    bd6fe46..b9e3a0d  main -> main
+    ```
+6. github 사이트(https://github.com/wooyeon83/AIBP_Team_Project.git)로 가서 변경사항이 잘 저장되었는지 확인한다.
+
+### 7. git에 변경사항 내려받기
+1. AIBP_Team_Project폴더 경로로 이동한다.
+* vscode 터미널에서 "cd 이동할경로" 명령어를 수행한다.
+    ```
+    (base) choiwooyeon@choeuyeons-MacBook-Pro ~ % cd /Users/choiwooyeon/Desktop/국민대강의자료/AI빅데이터프로그래밍/조별과제/work/AIBP_Team_Project
+    ```
+2. git pull 명령을 수행한다.
+    ```
+    (base) choiwooyeon@choeuyeons-MacBook-Pro AIBP_Team_Project % git pull
+    ```
