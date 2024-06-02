@@ -9,6 +9,7 @@ import seaborn as sns
 from streamlit_option_menu import option_menu
 import streamlit as st
 from datetime import date
+import platform
 
 st.cache_resource.clear()
 sns.set_theme(style='whitegrid', font_scale=0.6)
@@ -30,8 +31,9 @@ st.title("👩‍👩‍👧‍👧 초등학생 성장발달 분석")
 ### 3.4 새로고침 버튼 추가
 if st.button('새로고침'):
     st.experimental_rerun()
-st.write("Streamlit에서 사용 가능한 폰트:")
-st.write(st.beta_get_query_params()["font"]["value"])
+os_info = platform.platform()
+st.write(os_info)
+
 
 #### 3.5 사이드바 꾸미기
 # 날짜 조건 필터 생성
