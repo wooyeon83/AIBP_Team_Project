@@ -10,6 +10,7 @@ from streamlit_option_menu import option_menu
 import streamlit as st
 from datetime import date
 
+st.cache_resource.clear()
 sns.set_theme(style='whitegrid', font_scale=0.6)
 sns.set_palette('Set2', n_colors=10)
 plt.rc('font', family='AppleGothic')
