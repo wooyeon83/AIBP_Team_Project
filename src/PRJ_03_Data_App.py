@@ -20,22 +20,6 @@ font_path = '/usr/share/fonts/truetype/nanum/NanumBarunGothic.ttf'
 plt.rc('font', family='NanumBarunGothic')
 plt.rc('axes', unicode_minus=False)
 
-# 사용 가능한 폰트 디렉토리 경로 설정
-font_dirs = ['/usr/share/fonts', os.path.expanduser('~/.fonts')]
-
-# 사용 가능한 폰트 목록 초기화
-available_fonts = []
-
-# 각 디렉토리에서 폰트 목록 읽어오기
-for font_dir in font_dirs:
-    if os.path.exists(font_dir):
-        fonts = os.listdir(font_dir)
-        available_fonts.extend(fonts)
-
-# 중복 제거
-available_fonts = list(set(available_fonts))
-
-
 
 font = {'fontsize':10, 'fontstyle':'italic', 'backgroundcolor':'white', 'color':'black', 'fontweight': 'bold'} # for plot title
 
@@ -51,10 +35,6 @@ st.title("👩‍👩‍👧‍👧 초등학생 성장발달 분석")
 ### 3.4 새로고침 버튼 추가
 if st.button('새로고침'):
     st.experimental_rerun()
-# 사용 가능한 폰트 목록 출력
-print("사용 가능한 폰트 목록:")
-for font in available_fonts:
-    st.write(font)
 
 #### 3.5 사이드바 꾸미기
 # 날짜 조건 필터 생성
