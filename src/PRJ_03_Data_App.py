@@ -34,10 +34,7 @@ for font_dir in font_dirs:
 # 중복 제거
 available_fonts = list(set(available_fonts))
 
-# 사용 가능한 폰트 목록 출력
-print("사용 가능한 폰트 목록:")
-for font in available_fonts:
-    st.write(font)
+
 
 font = {'fontsize':10, 'fontstyle':'italic', 'backgroundcolor':'white', 'color':'black', 'fontweight': 'bold'} # for plot title
 
@@ -53,9 +50,10 @@ st.title("👩‍👩‍👧‍👧 초등학생 성장발달 분석")
 ### 3.4 새로고침 버튼 추가
 if st.button('새로고침'):
     st.experimental_rerun()
-os_info = platform.platform()
-st.write(os_info)
-
+# 사용 가능한 폰트 목록 출력
+print("사용 가능한 폰트 목록:")
+for font in available_fonts:
+    st.write(font)
 
 #### 3.5 사이드바 꾸미기
 # 날짜 조건 필터 생성
