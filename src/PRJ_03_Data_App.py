@@ -23,10 +23,7 @@ plt.rc('axes', unicode_minus=False)
 # 디렉토리 내 파일 목록 읽기
 file_list = os.listdir("/usr/share/fonts/truetype/")
 
-# 파일 목록 출력
-print("디렉토리 내 파일 목록:")
-for file in file_list:
-    print(file)
+
 
 font = {'fontsize':10, 'fontstyle':'italic', 'backgroundcolor':'white', 'color':'black', 'fontweight': 'bold'} # for plot title
 
@@ -38,7 +35,10 @@ df.head()
 st.set_page_config(page_title='Elementary Student Growth Analysis Dashboard', 
                    page_icon='👩‍👩‍👧‍👧', layout='wide')
 st.title("👩‍👩‍👧‍👧 초등학생 성장발달 분석")
-
+# 파일 목록 출력
+print("디렉토리 내 파일 목록:")
+for file in file_list:
+    st.write(file)
 ### 3.4 새로고침 버튼 추가
 if st.button('새로고침'):
     st.experimental_rerun()
