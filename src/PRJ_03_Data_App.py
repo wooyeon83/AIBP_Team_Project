@@ -19,7 +19,7 @@ plt.rc('axes', unicode_minus=False)
 font = {'fontsize':10, 'fontstyle':'italic', 'backgroundcolor':'white', 'color':'black', 'fontweight': 'bold'} # for plot title
 
 ### 3.2 분석할 데이터 읽어오기
-df = pd.read_csv(fr"./data/data.csv", encoding='utf-8', low_memory=False)
+df = pd.read_csv(fr"https://raw.githubusercontent.com/wooyeon83/AIBP_Team_Project/main/data/input/data.csv", encoding='utf-8', low_memory=False)
 df.head()
 
 ### 3.3 웹페이지 타이틀 설정하기
@@ -73,7 +73,7 @@ def first_page_draw():
     col5.metric(label = "대상 시도", value = f"총 {len(df['시도별'].unique())}개")
 
     st.header('2. 컬럼정보')
-    file_path = 'data/column_info.txt'
+    file_path = 'https://raw.githubusercontent.com/wooyeon83/AIBP_Team_Project/main/data/input/column_info.txt'
     with open(file_path, 'r') as file:
         file_contents = file.read()
 
