@@ -15,8 +15,6 @@ st.cache_resource.clear()
 sns.set_theme(style='whitegrid', font_scale=0.6)
 sns.set_palette('Set2', n_colors=10)
 
-font_path = '/usr/share/fonts/truetype/nanum/NanumBarunGothic.ttf' 
-
 plt.rc('font', family='DejaVu Sans')
 plt.rc('axes', unicode_minus=False)
 
@@ -35,10 +33,7 @@ df.head()
 st.set_page_config(page_title='Elementary Student Growth Analysis Dashboard', 
                    page_icon='👩‍👩‍👧‍👧', layout='wide')
 st.title("👩‍👩‍👧‍👧 초등학생 성장발달 분석")
-# 파일 목록 출력
-print("디렉토리 내 파일 목록:")
-for file in file_list:
-    st.write(file)
+
 ### 3.4 새로고침 버튼 추가
 if st.button('새로고침'):
     st.experimental_rerun()
