@@ -31,7 +31,7 @@ st.title("👩‍👩‍👧‍👧 초등학생 성장발달 분석")
 if st.button('새로고침'):
     st.experimental_rerun()
 st.write("Streamlit에서 사용 가능한 폰트:")
-st.write(st.list_fonts())
+st.write(st.beta_get_query_params()["font"]["value"])
 
 #### 3.5 사이드바 꾸미기
 # 날짜 조건 필터 생성
