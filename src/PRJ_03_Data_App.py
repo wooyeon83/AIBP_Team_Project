@@ -15,11 +15,10 @@ st.cache_resource.clear()
 sns.set_theme(style='whitegrid', font_scale=0.6)
 sns.set_palette('Set2', n_colors=10)
 
-plt.rc('font', family='DejaVu Sans')
+plt.rc('font', family='NanumGothic')
+#plt.rc('font', family='AppleGothic') #윈도우에서는 malgun gothic
 plt.rc('axes', unicode_minus=False)
 
-# 디렉토리 내 파일 목록 읽기
-file_list = os.listdir("/usr/share/fonts/truetype/")
 
 
 
