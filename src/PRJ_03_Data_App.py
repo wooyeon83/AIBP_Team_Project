@@ -14,7 +14,7 @@ import platform
 st.cache_resource.clear()
 sns.set_theme(style='whitegrid', font_scale=0.6)
 sns.set_palette('Set2', n_colors=10)
-plt.rc('font', family='Noto Sans CJK')
+plt.rc('font', family='truetype')
 plt.rc('axes', unicode_minus=False)
 
 import os
