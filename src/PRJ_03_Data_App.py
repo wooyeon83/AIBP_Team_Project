@@ -73,7 +73,7 @@ def first_page_draw():
     col5.metric(label = "대상 시도", value = f"총 {len(df['시도별'].unique())}개")
 
     st.header('2. 컬럼정보')
-    file_path = 'https://raw.githubusercontent.com/wooyeon83/AIBP_Team_Project/main/data/input/column_info.txt'
+    file_path = fr"https://raw.githubusercontent.com/wooyeon83/AIBP_Team_Project/main/data/input/column_info.txt"
     with open(file_path, 'r') as file:
         file_contents = file.read()
 
