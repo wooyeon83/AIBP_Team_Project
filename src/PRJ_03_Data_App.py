@@ -17,6 +17,28 @@ sns.set_palette('Set2', n_colors=10)
 plt.rc('font', family='Noto Sans CJK')
 plt.rc('axes', unicode_minus=False)
 
+import os
+
+# 사용 가능한 폰트 디렉토리 경로 설정
+font_dirs = ['/usr/share/fonts', os.path.expanduser('~/.fonts')]
+
+# 사용 가능한 폰트 목록 초기화
+available_fonts = []
+
+# 각 디렉토리에서 폰트 목록 읽어오기
+for font_dir in font_dirs:
+    if os.path.exists(font_dir):
+        fonts = os.listdir(font_dir)
+        available_fonts.extend(fonts)
+
+# 중복 제거
+available_fonts = list(set(available_fonts))
+
+# 사용 가능한 폰트 목록 출력
+print("사용 가능한 폰트 목록:")
+for font in available_fonts:
+    st.write(font)
+
 font = {'fontsize':10, 'fontstyle':'italic', 'backgroundcolor':'white', 'color':'black', 'fontweight': 'bold'} # for plot title
 
 ### 3.2 분석할 데이터 읽어오기
