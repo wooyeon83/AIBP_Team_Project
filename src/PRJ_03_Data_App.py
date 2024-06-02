@@ -19,7 +19,7 @@ plt.rc('axes', unicode_minus=False)
 font = {'fontsize':10, 'fontstyle':'italic', 'backgroundcolor':'white', 'color':'black', 'fontweight': 'bold'} # for plot title
 
 ### 3.2 분석할 데이터 읽어오기
-df = pd.read_csv(fr'data/data.csv', encoding='utf-8', low_memory=False)
+df = pd.read_csv(fr"./data/data.csv", encoding='utf-8', low_memory=False)
 df.head()
 
 ### 3.3 웹페이지 타이틀 설정하기
