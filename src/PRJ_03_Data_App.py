@@ -67,9 +67,9 @@ def first_page_draw():
     col1, col2, col3, col4, col5 = st.columns([2, 1, 2, 2, 1])
     col1.metric(label = "총 데이터 건수", value = f'총 {df.shape[0]} 건')
     col2.metric(label = "총 컬럼수", value = f'총 {len(df.columns)}개')
-    col3.metric(label = "데이터 범위", value = f'{df['학년도'].min()}년~{df['학년도'].max()}년')
-    col4.metric(label = "데이터 대상", value = f'{df['학년'].min()}학년~{df['학년'].max()}학년')
-    col5.metric(label = "대상 시도", value = f'총 {len(df['시도별'].unique())}개')
+    col3.metric(label = "데이터 범위", value = f"{df['학년도'].min()}년~{df['학년도'].max()}년")
+    col4.metric(label = "데이터 대상", value = f"{df['학년'].min()}학년~{df['학년'].max()}학년")
+    col5.metric(label = "대상 시도", value = f"총 {len(df['시도별'].unique())}개")
 
     st.header('2. 컬럼정보')
     file_path = '../data/input/column_info.txt'
