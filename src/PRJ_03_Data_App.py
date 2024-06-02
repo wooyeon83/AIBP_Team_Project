@@ -20,6 +20,13 @@ font_path = '/usr/share/fonts/truetype/nanum/NanumBarunGothic.ttf'
 plt.rc('font', family='NanumBarunGothic')
 plt.rc('axes', unicode_minus=False)
 
+# 디렉토리 내 파일 목록 읽기
+file_list = os.listdir("/usr/share/fonts/truetype/")
+
+# 파일 목록 출력
+print("디렉토리 내 파일 목록:")
+for file in file_list:
+    print(file)
 
 font = {'fontsize':10, 'fontstyle':'italic', 'backgroundcolor':'white', 'color':'black', 'fontweight': 'bold'} # for plot title
 
