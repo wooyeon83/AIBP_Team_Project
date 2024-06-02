@@ -15,7 +15,7 @@ st.cache_resource.clear()
 sns.set_theme(style='whitegrid', font_scale=0.6)
 sns.set_palette('Set2', n_colors=10)
 
-plt.rc('font', family='Malgun Gothic')
+plt.rc('font', family='Source Sans Pro')
 #plt.rc('font', family='AppleGothic') #윈도우에서는 malgun gothic
 plt.rc('axes', unicode_minus=False)
 
