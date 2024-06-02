@@ -17,7 +17,7 @@ sns.set_palette('Set2', n_colors=10)
 
 font_path = '/usr/share/fonts/truetype/nanum/NanumBarunGothic.ttf' 
 
-#plt.rc('font', family='NanumBarunGothic')
+plt.rc('font', family='dejavu')
 plt.rc('axes', unicode_minus=False)
 
 # 디렉토리 내 파일 목록 읽기
