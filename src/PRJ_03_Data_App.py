@@ -37,8 +37,7 @@ else:
     print(f"Font file found at {font_path}.")
 
 # Matplotlib에 폰트 설정
-font_prop = fm.FontProperties(fname=font_path)
-plt.rcParams['font.family'] = font_prop.get_file()
+plt.rcParams['font.family'] = "NanumGothic"
 
 ### 3.2 분석할 데이터 읽어오기
 df = pd.read_csv(fr"https://raw.githubusercontent.com/wooyeon83/AIBP_Team_Project/main/data/input/data.csv", encoding='utf-8', low_memory=False)
