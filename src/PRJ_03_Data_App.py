@@ -36,6 +36,7 @@ if not os.path.exists(font_path):
 else:
     print(f"Font file found at {font_path}.")
 
+fm.fontManager.addfont(font_path)
 # Matplotlib에 폰트 설정
 plt.rcParams['font.family'] = "NanumGothic"
 
