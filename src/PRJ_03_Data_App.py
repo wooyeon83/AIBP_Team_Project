@@ -45,7 +45,7 @@ else:
 try:
     # 파일 권한을 755로 설정합니다.
     os.chmod(font_path, 0o755)
-    print(f"File permission changed for {file_path}")
+    print(f"File permission changed for {font_path}")
 except Exception as e:
     print(f"Failed to change file permission: {e}")
 
