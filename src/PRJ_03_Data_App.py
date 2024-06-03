@@ -11,6 +11,8 @@ import streamlit as st
 from datetime import date
 import os
 import requests
+import matplotlib.font_manager as fm
+
 
 st.cache_resource.clear()
 sns.set_theme(style='whitegrid', font_scale=0.6)
@@ -19,6 +21,38 @@ sns.set_palette('Set2', n_colors=10)
 plt.rc('axes', unicode_minus=False)
 font = {'fontsize':10, 'fontstyle':'italic', 'backgroundcolor':'white', 'color':'black', 'fontweight': 'bold'} # for plot title
 
+# 나눔고딕 TTF 폰트 다운로드 URL
+font_url = "https://github.com/naver/nanumfont/raw/master/ttf/NanumGothic.ttf"
+font_path = "/usr/share/fonts/truetype/NanumGothic.ttf"
+
+# 폰트 다운로드
+if not os.path.exists(font_path):
+    try:
+        response = requests.get(font_url)
+        response.raise_for_status()  # HTTP 오류가 발생하면 예외를 일으킵니다.
+        with open(font_path, "wb") as f:
+            f.write(response.content)
+        print(f"Downloaded font to {font_path}")
+    except requests.exceptions.RequestException as e:
+        print(f"Failed to download font: {e}")
+else:
+    print(f"Font already exists at {font_path}")
+
+# 폰트 설정 및 Matplotlib에서 사용
+try:
+    # 폰트 파일이 있는지 확인
+    if not os.path.exists(font_path):
+        raise FileNotFoundError(f"Font file not found at {font_path}")
+
+    font_prop = fm.FontProperties(fname=font_path)
+    
+    # 폰트 이름을 가져오는 단계에서 예외가 발생하면 오류 메시지를 출력하고 종료합니다.
+    try:
+        font_name = font_prop.get_name()
+        plt.rcParams['font.family'] = font_name
+    except Exception as e:
+        print(f"Failed to get font name: {e}")
+        exit()
 
 ### 3.2 분석할 데이터 읽어오기
 df = pd.read_csv(fr"https://raw.githubusercontent.com/wooyeon83/AIBP_Team_Project/main/data/input/data.csv", encoding='utf-8', low_memory=False)
