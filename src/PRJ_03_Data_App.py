@@ -41,6 +41,7 @@ else:
 
 
 # 폰트 파일을 Matplotlib에 추가
+fm.fontManager.addfont(font_path)
 font_prop = fm.FontProperties(fname=font_path)
 plt.rcParams['font.family'] = font_prop.get_name()
 
