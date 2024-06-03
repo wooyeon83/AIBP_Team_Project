@@ -51,8 +51,12 @@ except Exception as e:
 
 fm.fontManager.addfont(font_path)
 font_prop = fm.FontProperties(fname=font_path)
-plt.rcParams['font.family'] = font_prop.get_name()
+# plt.rcParams['font.family'] = font_prop.get_name()
+font_path = "NotoSansCJKsc-Regular.otf"
+font_prop = fm.FontProperties(fname=font_path)
+font_name = font_prop.get_name()
 
+print(f"The font name of {font_path} is {font_name}")
 
 ### 3.2 분석할 데이터 읽어오기
 df = pd.read_csv(fr"https://raw.githubusercontent.com/wooyeon83/AIBP_Team_Project/main/data/input/data.csv", encoding='utf-8', low_memory=False)
