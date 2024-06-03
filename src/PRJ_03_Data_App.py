@@ -41,6 +41,14 @@ else:
 
 
 # 폰트 파일을 Matplotlib에 추가
+# 파일 권한 변경
+try:
+    # 파일 권한을 755로 설정합니다.
+    os.chmod(font_path, 0o755)
+    print(f"File permission changed for {file_path}")
+except Exception as e:
+    print(f"Failed to change file permission: {e}")
+
 fm.fontManager.addfont(font_path)
 font_prop = fm.FontProperties(fname=font_path)
 plt.rcParams['font.family'] = font_prop.get_name()
