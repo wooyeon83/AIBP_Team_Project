@@ -194,3 +194,16 @@
     ```
     (base) choiwooyeon@choeuyeons-MacBook-Pro AIBP_Team_Project % git pull
     ```
+### 7. Data App 실행하기
+1. streamlit_option_menu 모듈을 설치한다.
+    ```
+    pip install streamlit_option_menu
+     ```
+2. 해당 소스코드(src/PRJ_03_Data_App.py) 경로로 이동한다.
+    ```
+    cd AIBP_Team_Project/src 
+    ```
+3. Data App 실행한다.
+    ```
+    python -m streamlit run PRJ_03_Data_App.py
+    ```
