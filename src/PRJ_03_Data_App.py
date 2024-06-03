@@ -33,12 +33,24 @@ df.head()
 st.set_page_config(page_title='Elementary Student Growth Analysis Dashboard', 
                    page_icon='👩‍👩‍👧‍👧', layout='wide')
 st.title("👩‍👩‍👧‍👧 초등학생 성장발달 분석")
-import matplotlib.font_manager
+import os
 
-# 현재 OS에서 사용 가능한 폰트 리스트 출력
-font_list = matplotlib.font_manager.findSystemFonts()
-for font in font_list:
-    st.write(font)
+# 시스템 폰트 디렉토리 경로 리스트
+font_dirs = [
+    "/usr/share/fonts",
+    "/usr/local/share/fonts",
+    "/usr/share/fonts/truetype",
+    "/usr/local/share/fonts/truetype"
+]
+
+# 시스템에 설치된 모든 폰트 파일 경로 출력
+for font_dir in font_dirs:
+    if os.path.isdir(font_dir):
+        for root, dirs, files in os.walk(font_dir):
+            for file in files:
+                if file.endswith(".ttf"):
+                    font_path = os.path.join(root, file)
+                    st.write(font_path)
 
 ### 3.4 새로고침 버튼 추가
 if st.button('새로고침'):
