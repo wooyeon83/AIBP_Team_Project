@@ -39,7 +39,7 @@ else:
 # Matplotlib에 폰트 설정
 font_prop = fm.FontProperties(fname=font_path)
 print(font_prop)
-plt.rcParams['font.family'] = font_prop.get_name()
+plt.rcParams['font.family'] = "NanumGothic.ttf"
 
 ### 3.2 분석할 데이터 읽어오기
 df = pd.read_csv(fr"https://raw.githubusercontent.com/wooyeon83/AIBP_Team_Project/main/data/input/data.csv", encoding='utf-8', low_memory=False)
