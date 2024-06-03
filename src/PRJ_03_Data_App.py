@@ -53,7 +53,8 @@ try:
     except Exception as e:
         print(f"Failed to get font name: {e}")
         exit()
-
+except Exception as e:
+    print(f"An error occurred: {e}")
 ### 3.2 분석할 데이터 읽어오기
 df = pd.read_csv(fr"https://raw.githubusercontent.com/wooyeon83/AIBP_Team_Project/main/data/input/data.csv", encoding='utf-8', low_memory=False)
 df.head()
