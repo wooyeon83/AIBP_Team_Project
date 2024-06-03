@@ -28,6 +28,12 @@ df.head()
 st.set_page_config(page_title='Elementary Student Growth Analysis Dashboard', 
                    page_icon='👩‍👩‍👧‍👧', layout='wide')
 st.title("👩‍👩‍👧‍👧 초등학생 성장발달 분석")
+import matplotlib.font_manager
+
+# 현재 OS에서 사용 가능한 폰트 리스트 출력
+font_list = matplotlib.font_manager.findSystemFonts()
+for font in font_list:
+    st.write(font)
 
 ### 3.4 새로고침 버튼 추가
 if st.button('새로고침'):
