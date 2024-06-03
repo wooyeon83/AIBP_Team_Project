@@ -24,10 +24,9 @@ import matplotlib.font_manager as fm
 
 # 나눔고딕 폰트 다운로드 URL
 font_url = "https://github.com/naver/nanumfont/raw/master/ttf/NanumGothic.ttf"
-font_path = "NanumGothic.ttf"
 
 # 나눔고딕 폰트 파일 경로
-font_path = 'NanumGothic.ttf'
+font_path = './NanumGothic.ttf'
 
 # 폰트 파일이 있는지 확인
 if not os.path.exists(font_path):
