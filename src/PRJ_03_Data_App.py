@@ -26,7 +26,7 @@ import matplotlib.font_manager as fm
 font_url = "https://github.com/naver/nanumfont/raw/master/ttf/NanumGothic.ttf"
 
 # 나눔고딕 폰트 파일 경로
-font_path = './NanumGothic.ttf'
+font_path = './static/media/SourceSansPro-Regular.0d69e5ff5e92ac64a0c9.woff2'
 
 # 폰트 파일이 있는지 확인
 if not os.path.exists(font_path):
@@ -36,9 +36,9 @@ if not os.path.exists(font_path):
 else:
     print(f"Font file found at {font_path}.")
 
-#fm.fontManager.addfont(font_path)
+fm.fontManager.addfont(font_path)
 # Matplotlib에 폰트 설정
-plt.rcParams['font.family'] = "NanumGothic"
+plt.rcParams['font.family'] = "SourceSansPro"
 
 ### 3.2 분석할 데이터 읽어오기
 df = pd.read_csv(fr"https://raw.githubusercontent.com/wooyeon83/AIBP_Team_Project/main/data/input/data.csv", encoding='utf-8', low_memory=False)
