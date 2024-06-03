@@ -11,6 +11,11 @@ import streamlit as st
 from datetime import date
 import os
 import requests
+import subprocess
+
+# 명령어 실행
+result = subprocess.run(["apt install fonts-nanum"], capture_output=True, text=True)
+print(result)
 
 st.cache_resource.clear()
 sns.set_theme(style='whitegrid', font_scale=0.6)
