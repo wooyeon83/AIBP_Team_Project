@@ -22,23 +22,28 @@ font = {'fontsize':10, 'fontstyle':'italic', 'backgroundcolor':'white', 'color':
 
 import matplotlib.font_manager as fm
 
-# 나눔고딕 폰트 다운로드 URL
-font_url = "https://github.com/naver/nanumfont/raw/master/ttf/NanumGothic.ttf"
+import matplotlib.pyplot as plt
+import requests
+import os
 
-# 나눔고딕 폰트 파일 경로
-font_path = './static/media/SourceSansPro-Regular.0d69e5ff5e92ac64a0c9.woff2'
+# 폰트 다운로드 URL
+font_url = "https://github.com/google/fonts/raw/main/ofl/notosanscjk/NotoSansCJKsc-Regular.otf"
+font_path = "NotoSansCJKsc-Regular.otf"
 
-# 폰트 파일이 있는지 확인
+# 폰트 다운로드
 if not os.path.exists(font_path):
-    # 파일이 없으면 폰트를 직접 다운로드해야 합니다.
-    # 직접 다운로드하고 경로를 설정합니다.
-    print(f"Font file not found at {font_path}. Please download the file and place it in the current directory.")
+    response = requests.get(font_url)
+    with open(font_path, "wb") as f:
+        f.write(response.content)
+    print(f"Downloaded font to {font_path}")
 else:
-    print(f"Font file found at {font_path}.")
+    print(f"Font already exists at {font_path}")
 
-fm.fontManager.addfont(font_path)
-# Matplotlib에 폰트 설정
-plt.rcParams['font.family'] = "SourceSansPro"
+
+# 폰트 파일을 Matplotlib에 추가
+font_prop = fm.FontProperties(fname=font_path)
+plt.rcParams['font.family'] = font_prop.get_name()
+
 
 ### 3.2 분석할 데이터 읽어오기
 df = pd.read_csv(fr"https://raw.githubusercontent.com/wooyeon83/AIBP_Team_Project/main/data/input/data.csv", encoding='utf-8', low_memory=False)
