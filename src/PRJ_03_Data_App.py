@@ -10,19 +10,34 @@ from streamlit_option_menu import option_menu
 import streamlit as st
 from datetime import date
 import os
+import requests
 
 st.cache_resource.clear()
 sns.set_theme(style='whitegrid', font_scale=0.6)
 sns.set_palette('Set2', n_colors=10)
-
-plt.rcParams['font.family'] = 'Source Sans Pro'  # 폰트 패밀리 설정
 #plt.rc('font', family='AppleGothic') #윈도우에서는 malgun gothic
 plt.rc('axes', unicode_minus=False)
-
-
-
-
 font = {'fontsize':10, 'fontstyle':'italic', 'backgroundcolor':'white', 'color':'black', 'fontweight': 'bold'} # for plot title
+
+
+import matplotlib.font_manager as fm
+
+# 나눔고딕 폰트 다운로드 URL
+font_url = "https://github.com/naver/nanumfont/raw/master/ttf/NanumGothic.ttf"
+font_path = "NanumGothic.ttf"
+
+# 폰트 다운로드
+if not os.path.exists(font_path):
+    response = requests.get(font_url)
+    with open(font_path, "wb") as f:
+        f.write(response.content)
+    print(f"Downloaded font to {font_path}")
+else:
+    print(f"Font already exists at {font_path}")
+
+# Matplotlib에 폰트 설정
+font_prop = fm.FontProperties(fname=font_path)
+plt.rc('font', family=font_prop.get_name())
 
 ### 3.2 분석할 데이터 읽어오기
 df = pd.read_csv(fr"https://raw.githubusercontent.com/wooyeon83/AIBP_Team_Project/main/data/input/data.csv", encoding='utf-8', low_memory=False)
