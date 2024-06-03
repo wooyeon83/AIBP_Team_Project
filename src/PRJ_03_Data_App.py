@@ -20,44 +20,6 @@ plt.rc('axes', unicode_minus=False)
 font = {'fontsize':10, 'fontstyle':'italic', 'backgroundcolor':'white', 'color':'black', 'fontweight': 'bold'} # for plot title
 
 
-import matplotlib.font_manager as fm
-
-import matplotlib.pyplot as plt
-import requests
-import os
-
-# 폰트 다운로드 URL
-font_url = "https://github.com/google/fonts/raw/main/ofl/notosanscjk/NotoSansCJKsc-Regular.otf"
-font_path = "NotoSansCJKsc-Regular.otf"
-
-# 폰트 다운로드
-if not os.path.exists(font_path):
-    response = requests.get(font_url)
-    with open(font_path, "wb") as f:
-        f.write(response.content)
-    print(f"Downloaded font to {font_path}")
-else:
-    print(f"Font already exists at {font_path}")
-
-
-# 폰트 파일을 Matplotlib에 추가
-# 파일 권한 변경
-try:
-    # 파일 권한을 755로 설정합니다.
-    os.chmod(font_path, 0o755)
-    print(f"File permission changed for {font_path}")
-except Exception as e:
-    print(f"Failed to change file permission: {e}")
-
-fm.fontManager.addfont(font_path)
-font_prop = fm.FontProperties(fname=font_path)
-# plt.rcParams['font.family'] = font_prop.get_name()
-font_path = "NotoSansCJKsc-Regular.otf"
-font_prop = fm.FontProperties(fname=font_path)
-font_name = font_prop.get_name()
-
-print(f"The font name of {font_path} is {font_name}")
-
 ### 3.2 분석할 데이터 읽어오기
 df = pd.read_csv(fr"https://raw.githubusercontent.com/wooyeon83/AIBP_Team_Project/main/data/input/data.csv", encoding='utf-8', low_memory=False)
 df.head()
