@@ -12,6 +12,9 @@ from datetime import date
 import os
 import requests
 
+
+! pip install font-nanum
+
 st.cache_resource.clear()
 sns.set_theme(style='whitegrid', font_scale=0.6)
 sns.set_palette('Set2', n_colors=10)
