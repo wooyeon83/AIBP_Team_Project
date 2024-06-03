@@ -14,7 +14,7 @@ import requests
 import subprocess
 
 # 명령어 실행
-result = subprocess.run(["apt install fonts-nanum"], capture_output=True, text=True)
+result = subprocess.run(["yum install -y google-noto-sans-cjk-korean-fonts"], capture_output=True, text=True)
 print(result)
 
 st.cache_resource.clear()
