@@ -10,7 +10,6 @@ from streamlit_option_menu import option_menu
 import streamlit as st
 from datetime import date
 
-st.cache_resource.clear()
 sns.set_theme(style='whitegrid', font_scale=0.6)
 sns.set_palette('Set2', n_colors=10)
 plt.rc('font', family='AppleGothic') #윈도우에서는 malgun gothic
@@ -111,7 +110,7 @@ def add_bmi_column(df5):
     df5[['학년도', '학년', '몸무게_kg', '키_cm', 'BMI', 'BMI등급']].head()
     return upper_fence, lower_fence
     
-
+@st.cache_resource(experimental_allow_widgets=True)
 def second_page_draw():
     st.header('1. 키 성장 변화')
 
@@ -357,6 +356,7 @@ def second_page_draw():
     fig.subplots_adjust(left=0.1, right=0.9, top=0.85, bottom=0.2, wspace=0.4)
     col2.pyplot(fig)
 
+@st.cache_resource(experimental_allow_widgets=True)
 def third_page_draw():
     st.write("* [참고] 표본에서 건강검진은 초등학교 4학년 학생들에 대한 데이터만 조사함")
     st.markdown("""
